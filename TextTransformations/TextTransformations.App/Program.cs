@@ -22,6 +22,16 @@ namespace TextTransformations.App
 
             Console.WriteLine(result1);
             Console.WriteLine(result2);
+
+
+            // alternative design - use a static processor with rules as parameters
+            string result3 = StaticTextTransformationProcessor.ApplyAllTransformationRules(
+                input,
+                new ReplaceStringTransformationRule("consectetur", "test"),
+                new RemoveAllStringTransformationRule("Neque porro quisquam "),
+                new InsertStringAtTransformationRule(3, " abc "));
+
+            Console.WriteLine(result3);
         }
     }
 }
