@@ -14,7 +14,8 @@ namespace TextTransformations.App
 
             TextTransformationProcessor processor2 = new TextTransformationProcessor(
                 new ReplaceStringTransformationRule("consectetur", "test"),
-                new RemoveAllStringTransformationRule("Neque porro quisquam "));
+                new RemoveAllStringTransformationRule("Neque porro quisquam "),
+                new InsertStringAtTransformationRule(3, " abc "));
 
             string result1 = processor1.ApplyAllTransformationRules(input);
             string result2 = processor2.ApplyAllTransformationRules(input);
